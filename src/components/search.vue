@@ -5,8 +5,8 @@
       <p class="title">添加城市</p>
     </div>
     <div class="searchBox">
-      <input type="search" name id v-model="keyWord" @focus="clear()"  @keyup.enter="search()"/>
-      <i class="iconfont icon-icon_search" @click="search()" ></i>
+      <input type="search" name id v-model="keyWord" @focus="clear()" @keyup.enter="search()" />
+      <i class="iconfont icon-icon_search" @click="search()"></i>
     </div>
     <div class="list" v-show="searchFlag">
       <ul>
@@ -179,7 +179,7 @@ export default {
 .header {
   width: 100%;
   height: 40px;
-   background-color: rgb(225, 233, 220);
+  background-color: rgb(225, 233, 220);
   position: relative;
 }
 
@@ -205,11 +205,11 @@ export default {
 }
 
 .searchBox input {
-  background-color: rgba(167,220,224,.5);
+  background-color: rgba(167, 220, 224, 0.5);
   width: 86%;
   height: 24px;
   float: left;
-  border: 1px solid rgba(28,120,135,.4);
+  border: 1px solid rgba(28, 120, 135, 0.4);
   border-radius: 12px;
   margin-left: 5px;
   padding: 0 12px;
@@ -223,15 +223,15 @@ export default {
 .searchBox i {
   height: 22px;
   width: 10%;
-  border: 1px solid rgba(28,120,135,.4);
-  background-color: rgba(167,220,224,.3);
+  border: 1px solid rgba(28, 120, 135, 0.4);
+  background-color: rgba(167, 220, 224, 0.3);
   float: right;
   margin-right: 5px;
   line-height: 22px;
   font-size: 18px;
   border-radius: 12px;
 }
-  
+
 .list {
   width: 98%;
   margin: 0 auto;
@@ -242,7 +242,7 @@ export default {
 
 .list ul {
   list-style: none;
-  background-color: rgba(225, 233, 220,.1)
+  background-color: rgba(225, 233, 220, 0.1);
 }
 
 .list ul li {
@@ -279,7 +279,7 @@ export default {
   margin: 0 8px 8px 0;
   padding: 0 8px;
   border-radius: 12px;
-  background-color: rgba(214, 200, 75,.2);
+  background-color: rgba(214, 200, 75, 0.2);
 }
 
 .history {

@@ -7,28 +7,25 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
-    #error{
-        height: 105px;
-        width:220px;
-        background-color: #eee;
-        border-radius: 20px;
-        padding-top: 10px;
-    }
+#error {
+  height: 105px;
+  width: 220px;
+  background-color: #eee;
+  border-radius: 20px;
+  padding-top: 10px;
+}
 
-    #error i{
-        text-align: center;
-        font-size: 45px;
-        color: red;
-    }
+#error i {
+  text-align: center;
+  font-size: 45px;
+  color: red;
+}
 
-    #error p{
-        font-size: 14px;
-    }
-
+#error p {
+  font-size: 14px;
+}
 </style>

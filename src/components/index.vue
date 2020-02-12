@@ -43,12 +43,10 @@
           </div>
           <div class="info">
             <span class="day">
-              
               <img class="icon_d" :src="daily0.icon_url_d" />
               <p>{{daily0.cond_txt_d}}</p>
             </span>
             <span class="night">
-              
               <img class="icon_n" :src="daily0.icon_url_n" />
               <p>{{daily0.cond_txt_n}}</p>
             </span>
@@ -71,12 +69,10 @@
           </div>
           <div class="info">
             <span class="day">
-              
               <img class="icon_d" :src="val.icon_url_d" />
               <p>{{val.cond_txt_d}}</p>
             </span>
             <span class="night">
-              
               <img class="icon_n" :src="val.icon_url_n" />
               <p>{{val.cond_txt_n}}</p>
             </span>
@@ -310,28 +306,27 @@ export default {
   methods: {
     //轮播
     scroll() {
-      console.log(this.$refs.ulEle.offsetHeight/5/10)
+      console.log(this.$refs.ulEle.offsetHeight / 5 / 10);
       var scrollTimeId = setInterval(() => {
         var flag = 0;
         var timeId = setInterval(() => {
-          
-          this.Top -= this.$refs.ulEle.offsetHeight/5/11;
+          this.Top -= this.$refs.ulEle.offsetHeight / 5 / 11;
           flag++;
           if (flag == 11) {
             clearInterval(timeId);
           }
-          if (this.Top <= -this.$refs.ulEle.offsetHeight/5*4) {
+          if (this.Top <= (-this.$refs.ulEle.offsetHeight / 5) * 4) {
             this.Top = 0;
           }
         }, 60);
         //页面跳转后销毁定时器
-        this.$once('hook:beforeDestroy',()=>{
+        this.$once("hook:beforeDestroy", () => {
           clearInterval(timeId);
-        })
+        });
       }, 3000);
-       this.$once('hook:beforeDestroy',()=>{
-          clearInterval(scrollTimeId);
-        })
+      this.$once("hook:beforeDestroy", () => {
+        clearInterval(scrollTimeId);
+      });
     },
     //温度折线绘制
     drawLine() {
@@ -360,11 +355,9 @@ export default {
           axisTick: {
             show: false
           },
-          axisLabel:{
-            color:'rgba(28,120,135,0.8)'
+          axisLabel: {
+            color: "rgba(28,120,135,0.8)"
           }
-          
-          
         },
         yAxis: {
           show: false,
@@ -383,15 +376,15 @@ export default {
             data: tmpArr,
             label: {
               show: true,
-              color:'rgba(38,188,213,0.8)'
+              color: "rgba(38,188,213,0.8)"
             },
-            lineStyle:{
-              color:'rgba(28,120,135,0.8)'
+            lineStyle: {
+              color: "rgba(28,120,135,0.8)"
             },
-            itemStyle:{
-              color:'rgba(38,188,213,0.8)'
+            itemStyle: {
+              color: "rgba(38,188,213,0.8)"
             },
-            hoverAnimation:false
+            hoverAnimation: false
           }
         ]
       });
@@ -560,7 +553,7 @@ export default {
             daily[i].cond_txt_d = result[i].cond_txt_d;
             daily[i].cond_txt_n = result[i].cond_txt_n;
             daily[i].icon_url_d =
-              "../../static/img/" + result[i].cond_code_d + ".png";
+              "./static/img/" + result[i].cond_code_d + ".png";
             //晚上天气图标有些会有不同
             if (
               result[i].cond_code_n == 100 ||
@@ -573,10 +566,11 @@ export default {
             ) {
               result[i].cond_code_n = result[i].cond_code_n + "n";
             }
-            daily[i].icon_url_n ="../../static/img/" + result[i].cond_code_n + ".png";
-              
-            daily[i].ss=result[i].ss;
-            daily[i].sr=result[i].sr;
+            daily[i].icon_url_n =
+              "./static/img/" + result[i].cond_code_n + ".png";
+
+            daily[i].ss = result[i].ss;
+            daily[i].sr = result[i].sr;
           }
         })
         .catch(err => {
@@ -645,10 +639,10 @@ export default {
 .cond {
   width: 100%;
   height: 130px;
-  padding: 5px 0 15px 0; 
+  padding: 5px 0 15px 0;
   margin-top: 40px;
   background-color: rgba(38, 188, 213, 0.8);
-  color:rgb(255, 233,220)
+  color: rgb(255, 233, 220);
 }
 
 .cond .nowCond {
@@ -684,7 +678,7 @@ export default {
 .lifeStyle .border {
   width: 95%;
   height: 110px;
-  background-color: rgb(167,220,224);
+  background-color: rgb(167, 220, 224);
   position: relative;
   border-radius: 15px;
   list-style: none;
@@ -704,7 +698,7 @@ export default {
   margin: 0 auto;
   font-size: 20px;
   line-height: 30px;
-  color: rgb(28,120,135);
+  color: rgb(28, 120, 135);
 }
 
 .lifeStyle .border .text {
@@ -720,7 +714,7 @@ export default {
   margin: 15px auto 0;
   border-radius: 15px;
   overflow: hidden;
-  background-color:rgba(225, 233, 220,.8);
+  background-color: rgba(225, 233, 220, 0.8);
   position: relative;
 }
 
@@ -750,7 +744,7 @@ export default {
   border-radius: 14px;
   position: relative;
   margin-bottom: 8px;
-  color: rgb(255, 233,220)
+  color: rgb(255, 233, 220);
 }
 
 .daily0 .time {
@@ -775,7 +769,7 @@ export default {
   right: 10px;
 }
 
-.daily0 .info span{
+.daily0 .info span {
   display: block;
   height: 25px;
 }
@@ -786,17 +780,17 @@ export default {
   float: right;
 }
 
-.daily0 .info p{
+.daily0 .info p {
   float: right;
   font-size: 14px;
   line-height: 25px;
   margin-right: 4px;
 }
 
-.daily0 .sun{
+.daily0 .sun {
   font-size: 14px;
 }
- 
+
 .sun {
   position: absolute;
   width: 100%;
@@ -826,7 +820,7 @@ export default {
   border-radius: 14px;
   position: relative;
   margin-bottom: 8px;
-  color:rgb(255, 233,220)
+  color: rgb(255, 233, 220);
 }
 
 .left {
@@ -844,7 +838,7 @@ export default {
   text-align: left;
 }
 
-.daily1 .time span{
+.daily1 .time span {
   display: block;
 }
 
@@ -857,10 +851,10 @@ export default {
   font-size: 12px;
 }
 
-.daily1 .info{
+.daily1 .info {
   position: absolute;
   right: 10px;
-  top:0px;
+  top: 0px;
 }
 
 .daily1 .info span {
@@ -868,15 +862,14 @@ export default {
   height: 20px;
 }
 
-
-.daily1 .info img{
+.daily1 .info img {
   float: right;
   height: 20px;
   width: 20px;
   margin-right: -2px;
 }
 
-.daily1 .info p{
+.daily1 .info p {
   float: right;
   font-size: 12px;
   line-height: 20px;
