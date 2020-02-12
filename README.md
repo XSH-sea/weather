@@ -1,6 +1,7 @@
 # weather
+利用vue-cli vue-router vuex axios 完成的天气预报web app
 
-> A Vue.js project
+<a href="https://github.com/XSH-sea/weather/dist/index.html">预览地址</a>
 
 ## Build Setup
 
