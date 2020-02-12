@@ -430,7 +430,7 @@ export default {
             //定位失败，跳转到搜索页面
             this.cityName = "请手动选择城市";
             alert("抱歉，无法定位当前城市，请手动选择城市！");
-            goSearch();
+            this.goSearch();
           }
         });
       });
